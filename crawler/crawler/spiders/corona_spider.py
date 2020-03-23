@@ -15,7 +15,10 @@ class QuoteSpider(scrapy.Spider):
 
     def parse_beyond(self, response, items):
         items['link'] = response.url
-        items['headline'] = response.css("h1.content__headline--no-margin-bottom::text").extract()
+        headline = response.css("h1.content__headline::text")[0].extract()
+        if headline is None:
+            headline = response.css("h1.content__headline--no-margin-bottom::text")[0].extract()
+        items['headline']=headline
         time = response.css("time.content__dateline-wpd")[0].extract()
         if time is not None:
             tree = BeautifulSoup(time, "lxml")
