@@ -46,11 +46,3 @@ class QuoteSpider(scrapy.Spider):
                 items['byline'] = byline
             # print(items)
             yield items
-
-
-
-
-
-
-
-# All done just host the csv file up and be done with it
