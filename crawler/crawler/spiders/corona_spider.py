@@ -18,7 +18,7 @@ class QuoteSpider(scrapy.Spider):
         headline = response.css("h1.content__headline::text")[0].extract()
         if headline is None:
             headline = response.css("h1.content__headline--no-margin-bottom::text")[0].extract()
-        if (label.find('Coronavirus') or label.find('coronavirus') or headline.find('Corona') or headline.find('corona') or headline.find('COVID'))  is not None:
+        if (label.find('corona') or headline.find('corona') or headline.find('COVID'))  is not None:
             tree = BeautifulSoup(label, "lxml")
             label = tree.get_text()
             # print(label)
