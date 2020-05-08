@@ -1,5 +1,5 @@
 # Corona Crawler
-This is a solution to crawl news articles from https://www.theguardian.com/au about **coronavius**. <br/>
+This is a solution to crawl news articles from https://www.theguardian.com/au about **coronavirus**. <br/>
 Headlines, Bylines, News Publishing times, News labels and Article Links are extracted from the target website and stored in a **CSV** file.
 <br/>**Language :** Python 3
 <br/>**Used Frameworks :** Scrapy(to crawl), BeautifulSoup(to cleanse), Pydrive(to store)  
